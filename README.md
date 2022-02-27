@@ -106,11 +106,11 @@ At the moment, these options are implemented:
 
 **-l**: Enables low-latency mode. Low-latency mode reduces latency by effectively rendering audio and video frames as soon as they are received, ignoring the associated timestamps. As a side effect, playback will be choppy and audio-video sync will be noticably off.
 
-**-a (hdmi|analog|off)**: Set audio output device
+**-a (hdmi|analog|hw:\*|off)**: Set audio output device, hw:* for ALSA renderer
 
 **-vr renderer**: Select a video renderer to use (rpi, gstreamer, or dummy)
 
-**-ar renderer**: Select an audio renderer to use (rpi, gstreamer, or dummy)
+**-ar renderer**: Select an audio renderer to use (rpi, gstreamer, alsa, or dummy)
 
 **-d**: Enables debug logging. Will lead to choppy playback due to heavy console output.
 
