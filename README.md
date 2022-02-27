@@ -48,6 +48,7 @@ sudo apt-get install cmake
 sudo apt-get install libavahi-compat-libdnssd-dev
 sudo apt-get install libplist-dev
 sudo apt-get install libssl-dev
+sudo apt-get install libasound2-dev
 mkdir build
 cd build
 cmake ..
@@ -64,7 +65,7 @@ For building on desktop linux, follow these steps as per your distribution:
 ```bash
 sudo apt-get install cmake libavahi-compat-libdnssd-dev libplist-dev libssl-dev \
     libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-libav \
-    gstreamer1.0-vaapi gstreamer1.0-plugins-bad
+    gstreamer1.0-vaapi gstreamer1.0-plugins-bad libasound2-dev
 mkdir build
 cd build
 cmake ..
@@ -75,7 +76,7 @@ make
 ```bash
 sudo dnf install cmake avahi-compat-libdns_sd-devel libplist-devel openssl-devel \
     gstreamer1-plugins-base-devel gstreamer1-libav gstreamer1-vaapi \
-    gstreamer1-plugins-bad-free
+    gstreamer1-plugins-bad-free libasound2-dev
 mkdir build
 cd build
 cmake ..
