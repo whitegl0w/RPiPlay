@@ -49,10 +49,6 @@ if( BRCM_GLES_V2 AND BRCM_EGL AND OPENMAXIL AND BCM_HOST AND VCOS AND VCHIQ_ARM 
 
   set( NEED_AAC_COMPILE true )
 
-#  option(BUILD_SHARED_LIBS "" OFF)
-#  add_subdirectory(fdk-aac EXCLUDE_FROM_ALL)
-#  add_subdirectory( h264-bitstream )
-
   set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DHAVE_LIBOPENMAX=2 -DOMX -DOMX_SKIP64BIT -ftree-vectorize -pipe -DUSE_EXTERNAL_OMX   -DHAVE_LIBBCM_HOST -DUSE_EXTERNAL_LIBBCM_HOST -DUSE_VCHIQ_ARM -Wno-psabi" )
   
   aux_source_directory( ${CMAKE_SYSROOT}/opt/vc/src/hello_pi/libs/ilclient/ ilclient_src )
@@ -64,7 +60,6 @@ if( BRCM_GLES_V2 AND BRCM_EGL AND OPENMAXIL AND BCM_HOST AND VCOS AND VCHIQ_ARM 
 
   set( RENDERER_FLAGS "${RENDERER_FLAGS} -DHAS_RPI_RENDERER" )
   set( RENDERER_SOURCES ${RENDERER_SOURCES} audio_renderer_rpi.c video_renderer_rpi.c )
-#  set( RENDERER_LINK_LIBS ${RENDERER_LINK_LIBS} ilclient airplay fdk-aac h264-bitstream )
   set( RENDERER_LINK_LIBS ${RENDERER_LINK_LIBS} ilclient )
 else()
   message( STATUS "OpenMAX libraries not found, skipping compilation of Raspberry Pi renderer" )
